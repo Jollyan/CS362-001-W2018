@@ -232,7 +232,7 @@ public class TimeTable {
 	    	int nexti =  0;
 	    	for(int i = 0;i<pv.length;i++){
 	    	    int newi = pv[nexti];
-	    	    newi = pv[nexti];
+	    	    newi = pv[nexti]; //run twice?
 	    	   Collections.swap(apptsUpdatedList,newi,newi);
 	    	   nexti = newi;
 	    	} 

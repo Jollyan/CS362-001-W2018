@@ -114,7 +114,7 @@ public class CalDay {
 		if(appts!=null)
 				this.appts = appts;
 		
-		if(appts!=null&&appts.size()==0)
+		if(appts!=null&&appts.size()==0) // why twice here but an extra condition?
 			this.appts = appts;
 	}
 	
