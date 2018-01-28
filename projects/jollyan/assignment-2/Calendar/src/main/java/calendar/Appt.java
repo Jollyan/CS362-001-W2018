@@ -101,7 +101,7 @@ public class Appt implements  Comparable<Appt>{
         setRecurrence(recurringDays, RECUR_BY_MONTHLY, 0, RECUR_NUMBER_NEVER);
 
         
-        isValid();
+        isValid(); 
     }
 
 

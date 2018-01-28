@@ -79,13 +79,15 @@ public class TimeTable {
 		}
 		  return calDays;
 	  }
+	  
+	  
 	   /**
 	     * This takes the given appointment and constructs a linked list of 
 	     * GregorianCalendar's, each of which represent a day when the appointment
 	     * occurs. The days are guaranteed to be between firstDay (inclusive) and
 	     * lastDay (exclusive). They are guaranteed to be in order.
-	     **/
-	    private static LinkedList<GregorianCalendar> getApptOccurences(Appt appt, 
+	   **/
+	   private static LinkedList<GregorianCalendar> getApptOccurences(Appt appt, 
 	        GregorianCalendar firstDay, GregorianCalendar lastDay) {
 	        
 	        LinkedList<GregorianCalendar> result = new LinkedList<GregorianCalendar>();
@@ -129,6 +131,8 @@ public class TimeTable {
 	            }        
 	        return result;
 	    }
+	    
+	    
 	    /**
 	     * Calculates the next recurring day in the given appointment. If the 
 	     * appointment does not recur it returns null. If the date cannot be 
