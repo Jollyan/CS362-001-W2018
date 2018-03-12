@@ -1,0 +1,64 @@
+Unique ID: Recursive Days initialization
+
+What is the bug? 
+
+	When initializing a empty recursive array instead of setting recurDays to empty it gets set to one item in the array. With this block of code:
+	
+private void setRecurDays(int[] recurDays) {
+        if (recurDays == null) {
+            this.recurDays = new int[1]; //The bug is here
+        }
+        else {
+            this.recurDays = recurDays;
+        }
+    }
+
+How do you make the bug happen?
+
+	This bug occurs whenever you have recurDays be null or not set. I made this bug happen in the random test with the code:
+
+int[] recurDays=null; //null instead here
+assertEquals(0, appt.getRecurDays().length); //the length of the array should be 0 but since there is a bug that sets it to length 1 it was caught.
+
+	The assertion catches the bug by showing the length of the array is not empty as it should be.
+
+What version of the software was this detected on?
+
+JUnit 4.12 - maven 4.0.0
+
+What is the estimated severity of the bug?
+
+Moderate
+
+What is the estimated priority of the bug?
+
+Low
+
+
+Unique ID: Hours Range
+
+What is the bug? 
+
+	When the hours are set above 14 hours the appointment is treated as a invalid appointment even if the hour is valid. For instance when the startHour is 15 the appointment will not be valid and added or used in any other function. 
+
+	 if(startHour<0 || startHour>14) //this upper bound is incorrect
+    		this.valid=false;
+
+How do you make the bug happen?
+
+	When trying to test the upper bound of the validation function it returned with an incorrect value. Such as:
+
+	appt.setStartHour(23);
+	assertTrue(appt.getValid()); //this comes back as false due to incorrect bounds
+
+What version of the software was this detected on?
+
+JUnit 4.12 - maven 4.0.0
+
+What is the estimated severity of the bug?
+
+Moderate
+
+What is the estimated priority of the bug?
+
+Moderate
