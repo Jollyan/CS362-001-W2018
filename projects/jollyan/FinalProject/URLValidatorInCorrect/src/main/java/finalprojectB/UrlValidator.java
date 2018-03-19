@@ -279,7 +279,7 @@ public class UrlValidator implements Serializable {
             }
             allowedSchemes = new HashSet<String>(schemes.length);
             for(int i=0; i < schemes.length; i++) {
-                allowedSchemes.add(schemes[i].toUpperCase(Locale.ENGLISH));
+                allowedSchemes.add(schemes[i].toUpperCase(Locale.ENGLISH));//bug
 
             }
         }
@@ -389,7 +389,7 @@ public class UrlValidator implements Serializable {
         if (authorityValidator != null && authorityValidator.isValid(authority)) {
             return true;
         }
-        // convert to ASCII if possible
+        // convert to ASCII if possible  
         final String authorityASCII = DomainValidator.unicodeToASCII(authority);
 
         Matcher authorityMatcher = AUTHORITY_PATTERN.matcher(authorityASCII);
